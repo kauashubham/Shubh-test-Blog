@@ -1,12 +1,13 @@
-import { Github, Linkedin, Mail, Twitter, FileText, Code2, Terminal, Cpu } from 'lucide-react';
-import { SocialLink, Project, ExperienceItem, SkillCategory } from './types';
+import { Github, Linkedin, Mail, Twitter, FileText, Code2, Terminal, Cpu, User, FolderOpen, Send, Monitor } from 'lucide-react';
+import { SocialLink, Project, ExperienceItem, SkillCategory, DesktopApp } from './types';
+import { AboutApp, ProjectsApp, ContactApp } from './components/apps/Apps';
 
 export const PERSONAL_INFO = {
   name: "Shubham Prajapati",
   title: "Software Engineer & Creative Developer",
   tagline: "Crafting digital experiences with precision and passion.",
   about: `I am a passionate developer focused on building scalable, accessible, and performant web applications. With a strong foundation in modern JavaScript frameworks and a keen eye for design, I bridge the gap between technical complexity and user experience. My journey involves solving real-world problems through code and constantly learning new technologies.`,
-  email: "contact@shubhamprajapati.dev", // Update with actual email
+  email: "contact@shubhamprajapati.dev", 
   location: "India",
 };
 
@@ -15,8 +16,9 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { platform: "LinkedIn", url: "https://linkedin.com/in/", icon: Linkedin },
   { platform: "Twitter", url: "https://twitter.com/", icon: Twitter },
   { platform: "Email", url: `mailto:${PERSONAL_INFO.email}`, icon: Mail },
-  { platform: "Resume", url: "#resume", icon: FileText },
 ];
+
+// ... (Projects, Experience, Skills data remains the same as before, just copying for completeness if needed, assuming they exist in previous output or I can just re-export them. I will re-include them to be safe since I'm overwriting the file)
 
 export const PROJECTS: Project[] = [
   {
@@ -97,5 +99,40 @@ export const SKILLS: SkillCategory[] = [
   {
     name: "Tools",
     skills: ["Git", "Docker", "AWS", "Figma", "Jest"]
+  }
+];
+
+export const DESKTOP_APPS: DesktopApp[] = [
+  {
+    id: 'about',
+    title: 'About Me',
+    icon: User,
+    component: AboutApp,
+    width: 900,
+    height: 600
+  },
+  {
+    id: 'projects',
+    title: 'Projects',
+    icon: FolderOpen,
+    component: ProjectsApp,
+    width: 1000,
+    height: 700
+  },
+  {
+    id: 'contact',
+    title: 'Contact',
+    icon: Send,
+    component: ContactApp,
+    width: 600,
+    height: 500
+  },
+  {
+    id: 'source',
+    title: 'Source Code',
+    icon: Code2,
+    component: () => null, // This will be handled as an external link in logic
+    width: 0,
+    height: 0
   }
 ];
